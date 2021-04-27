@@ -1,0 +1,111 @@
+:root {
+	--maths-colour: rgb(0, 0, 0);
+	--background-colour: rgb(10, 50, 100);
+	--background-color-shadow: rgb(35, 97, 173);
+	--foreground-colour: white;
+	--gradient-col-1: rgb(255, 0, 0);
+	--gradient-col-2: rgb(216, 0, 255);
+	--default-font: "Poppins", sans-serif;
+	@media (prefers-color-scheme: light) {
+		--maths-colour: rgb(0, 0, 0);
+		--background-colour: rgb(10, 50, 100);
+		--background-color-shadow: rgb(35, 97, 173);
+		--foreground-colour: white;
+		--gradient-col-1: rgb(255, 0, 0);
+		--gradient-col-2: rgb(216, 0, 255);
+	}
+	--spacer-gutter: calc(1.5rem / 1.618);
+	--spacer-0: 1.5rem; // 1.5
+	--spacer-1: min(calc(var(--spacer-0) * 1.618), 10vh); // 2.427
+	--spacer-2: calc(var(--spacer-0) * 1.618 * 1.618, 16.18vh); // 3.926
+	--header-height: calc(3rem + 2 * var(--spacer-gutter));
+}
+
+/* General Reset */
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font-family: var(--default-font);
+}
+
+html * {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: var(--foreground-colour);
+}
+
+.text a {
+	text-decoration: underline;
+	&:hover,
+	&:focus {
+		background: linear-gradient(
+			45deg,
+			var(--gradient-col-1),
+			var(--gradient-col-2)
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+button {
+	cursor: pointer;
+	font-family: var(--default-font);
+}
+
+kbd {
+	padding: 0.5ch;
+	background-color: beige;
+	margin-left: 0.5ch;
+	margin-right: 0.5ch;
+	border-radius: 0.5ch;
+	border: 2px solid bisque;
+	color: black;
+}
+
+/* Utility classes */
+.alignRight {
+	margin-left: auto;
+}
+
+.screenReaderOnly {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	left: -300vw;
+}
+/* Latex */
+.latex sub {
+	vertical-align: -0.5ex;
+	margin-left: -0.1667em;
+	margin-right: -0.125em;
+}
+
+.latex,
+.latex sub {
+	font-size: 1em;
+}
+
+.latex sup {
+	font-size: 0.85em;
+	vertical-align: 0.15em;
+	margin-left: -0.36em;
+	margin-right: -0.15em;
+}
+
+/* MathQuill */
+.mq-editable-field {
+	border: none;
+	&.mq-focused {
+		box-shadow: none;
+	}
+}
+
+.staticMath {
+	vertical-align: bottom;
+}

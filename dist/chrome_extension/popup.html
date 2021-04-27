@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+	<head>
+		<title>Maths To Clipboard</title>
+		<link rel="stylesheet" href="mathquill.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css" crossorigin="anonymous">
+	</head>
+	<body>
+		<div id="mathsInputWrapper" class="mathsInputWrapper">
+			<div id="mathsInputScroller" class="scrollWrapper">
+				<div id="mathsInput" class="mathsInput">ax^2 + bx + c = 0</div>
+			</div>
+		</div>
+		<div class="buttonGroup">
+			<button id="copyButton" class="button">Copy Maths</button>
+			<div class="colorInputWrapper button">
+				<input id="colorInput" type="color" />
+				<svg width="100%" height="100%">
+					<use href="images/icons.svg#pencil"/>
+				</svg>
+
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>

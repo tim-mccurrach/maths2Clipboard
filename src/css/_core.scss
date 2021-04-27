@@ -1,0 +1,28 @@
+@import "base";
+@import "buttons";
+
+.mathsInputWrapper {
+	cursor: text;
+	background: white;
+	padding-left: var(--spacer-0);
+	padding-right: var(--spacer-0);
+	border-radius: var(--spacer-0);
+	max-width: 100vw;
+	box-sizing: border-box;
+	@include gradientBorder("&:focus-within, &:active", 5px);
+	&::before {
+		background: white;
+		border-radius: var(--spacer-0);
+	}
+	.scrollWrapper {
+		padding-top: var(--spacer-0);
+		padding-bottom: var(--spacer-0);
+		overflow-x: overlay; // TODO: check prefixing for this
+	}
+	margin-bottom: var(--spacer-0);
+}
+
+.mathsInput {
+	color: var(--maths-colour);
+	border-color: var(--maths-colour);
+}

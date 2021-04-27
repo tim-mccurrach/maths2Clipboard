@@ -1,0 +1,14 @@
+body {
+	padding: var(--spacer-0);
+}
+
+.mathsInputWrapper {
+	// overwrite 100vw. Chrome Popup extension doesn't have the concept
+	// of 'vw'.
+	max-width: initial;
+}
+.buttonGroup {
+	// on the main site we do want these buttons to split onto separate rows
+	// but not for the extension.
+	min-width: max-content;
+}
