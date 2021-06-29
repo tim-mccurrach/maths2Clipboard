@@ -10,6 +10,7 @@ import {
 
 var mathsInput = document.getElementById("mathsInput");
 var mathsInputWrapper = document.getElementById("mathsInputWrapper");
+var mathsInputScroller = document.getElementById("mathsInputScroller");
 var copyButton = document.getElementById("copyButton");
 var colourInput = document.getElementById("colorInput");
 
@@ -46,8 +47,12 @@ chrome.storage.local.get({ mathsValue: "ax^2 + bx + c = 0" }, function (
 	});
 
 	mathsInputWrapper.addEventListener("click", function (event) {
-		if (event.target === mathsInputWrapper) {
+		if (
+			event.target === mathsInputWrapper ||
+			event.target === mathsInputScroller
+		) {
 			mathField.focus();
+			mathField.moveToRightEnd();
 		}
 	});
 
