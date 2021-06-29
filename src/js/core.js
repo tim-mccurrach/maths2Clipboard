@@ -51,7 +51,7 @@ function dataURItoBlob(dataURI) {
 }
 
 export const copyMaths = function (node, scaleFactor = 1) {
-	toPng(node, {
+	return toPng(node, {
 		width: domToImageUtils.width(node) * scaleFactor,
 		height: domToImageUtils.height(node) * scaleFactor,
 		style: {

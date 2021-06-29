@@ -22,11 +22,12 @@ var onCopyMaths = function () {
 		}
 		copying = true;
 		var buttonHTML = copyButton.innerHTML;
-		copyMaths(mathsInput, result.scaleFactor);
-		copyButton.innerHTML = "Copied...";
-		await new Promise((resolve) => setTimeout(resolve, 750));
-		copyButton.innerHTML = buttonHTML;
-		copying = false;
+		copyMaths(mathsInput, result.scaleFactor).then(async () => {
+			copyButton.innerHTML = "Copied...";
+			await new Promise((resolve) => setTimeout(resolve, 750));
+			copyButton.innerHTML = buttonHTML;
+			copying = false;
+		});
 	});
 };
 
