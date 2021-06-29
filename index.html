@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<link rel="icon" href="favicon.png" type="image/png">
 
 		<title>Maths To Clipboard</title>
 
@@ -12,23 +11,19 @@
   		<meta name="author" content="Tim McCurrach">
 
 		<meta property="og:title" content="Maths To Clipboard">
-		<meta property="og:description" content="Page description">
-		<!-- Probably delete these two:
-		<meta property="og:image" content="https://www.mywebsite.com/image.jpg">
-		<meta property="og:image:alt" content="Image description">
-		-->
+		<meta property="og:description" content="Easily type maths, and then copy it as a picture to use wherever you want.">
 		<meta property="og:locale" content="en_GB">
 		<meta property="og:type" content="website">
-		<meta name="twitter:card" content="summary">
 		<meta property="og:url" content="https://www.maths2clipboard.com">
 
-		<!-- Need to complete this bit once I've done the fav-icon
-		<link rel="icon" href="/favicon.ico">
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-		<link rel="manifest" href="/my.webmanifest">
-		<meta name="theme-color" content="#FF00FF">
-		-->
+		<meta property="og:image" content="https://www.maths2clipboard.com/icon128.jpg">
+		<meta property="og:image:alt" content="Maths to clipboard logo">
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="128" />
+		<meta property="og:image:height" content="128" />
+
+		<link rel="icon" href="favicon.png" type="image/png">
+		<meta name="theme-color" content="#103264">
 
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" crossorigin="anonymous">
@@ -85,6 +80,7 @@
 				</ul>
 			</nav>
 		</header>
+		<!-- Uncomment when Chrome extension is reviewed and published -->
 		<!--
 		<aside class="chromeExtension">
 			<a href="#">
@@ -144,15 +140,16 @@
 				<h2>About</h2>
 				<p>Entering mathematical expressions on most online platforms requires navigating a slow, clunky, and un-intuitive interface. It needn't be this way. It is quite simple to type maths in a natural fashion; the same way you most likely think about maths. No need for endless clicking, for learning <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>, or for awkward interfaces.</p>
 
+				<!-- Uncomment when Chrome extension is reviewed and published -->
 				<!--<p>The main point of this site is to advertise <a href="#">the chrome extension</a> so that not matter what site you are using, you can easily insert maths.
 				</p> -->
-				<p>Under the hood, maths2Clipoard uses the excellent <a href="http://mathquill.com/">mathQuill</a> library to make writing maths in the browser easy. It then uses <a href="https://github.com/tsayen/dom-to-image">dom-to-image</a> to render the resulting mark-up to png, and copies that to the clipboard. If there are any problems with the site or the extension, please raise an issue at the <a href="https://github.com/tim-mccurrach/maths2Clipboard/issues">github repo</a>.</p>
+				<p>Under the hood, maths2Clipoard uses the excellent <a href="http://mathquill.com/">mathQuill library</a> to make writing maths in the browser easy. It then uses <a href="https://github.com/tsayen/dom-to-image">dom-to-image</a> to render the resulting mark-up to png, and copies that to the clipboard. If there are any problems with the site or the extension, please <a href="https://github.com/tim-mccurrach/maths2Clipboard/issues">raise an issue at the github repo</a>.</p>
 			</section>
 		</main>
 		<footer class="text">
 			<div class="footerContent">
 				<span>&copy 2021 - Tim McCurrach</span>
-				<a class="alignRight" href="https://github.com/tim-mccurrach/maths2Clipboard">Github</a>
+				<a class="alignRight" href="https://github.com/tim-mccurrach/maths2Clipboard" title="Link to maths to clipboard github page">Github</a>
 			</div>
 		</footer>
 		<script src="main.js"></script>
