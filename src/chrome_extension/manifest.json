@@ -1,7 +1,7 @@
 {
 	"name": "maths2Clipboard",
 	"description": "Easily type maths, and then copy it as a picture to use wherever you want.",
-	"version": "1.0",
+	"version": "0.0.1",
 	"manifest_version": 3,
 	"permissions": ["storage", "scripting"],
 	"action": {
