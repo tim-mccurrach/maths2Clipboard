@@ -1,8 +1,9 @@
 {
   "name": "maths2clipboard",
   "version": "0.1.0",
-  "description": "",
+  "description": "Easily type maths, and then copy it as a picture to use wherever you want.",
   "private": true,
+  "homepage": "https://github.com/tim-mccurrach/maths2Clipboard",
   "scripts": {
     "start": "nps",
     "test": "nps test"
