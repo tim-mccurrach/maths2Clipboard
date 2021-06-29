@@ -60,8 +60,8 @@
 					<dialog tabIndex="0" id="settingsDialogue">
 						<form id="settingsForm" method="dialog">
 							<label>Set the zoom level for the copied image:</label><br>
-							<input name="scaleFactor" type="number" min="1"><br>
-							<small>A number twice as large, results in a picture twice as large</small>
+							<input name="scaleFactor" type="number" min="1" aria-describedby="scaleFactorHelpText"><br>
+							<small id="scaleFactorHelpText">A number twice as large, results in a picture twice as large</small>
 							<div class="buttonGroup">
 								<button type="submit" value="submit" class="button">OK</button>
 								<button value="close" class="button">Close</button>
