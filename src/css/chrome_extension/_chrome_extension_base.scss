@@ -1,5 +1,6 @@
 body {
 	padding: var(--spacer-0);
+	background-color: var(--background-colour);
 }
 
 .mathsInputWrapper {
@@ -11,4 +12,14 @@ body {
 	// on the main site we do want these buttons to split onto separate rows
 	// but not for the extension.
 	min-width: max-content;
+}
+
+.copyButton {
+	height: 6ch;
+	padding-left: 6ch;
+	padding-right: 6ch;
+	border-radius: 6ch;
+	&::before {
+		border-radius: 6ch;
+	}
 }
