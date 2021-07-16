@@ -1,7 +1,7 @@
 import {
-	MQ,
-	mathQuillConfig,
 	copyMaths,
+	mathQuillConfig,
+	MQ,
 	overwriteMathQuillKeyDown,
 	sanitiseLatex,
 } from "./core.js";

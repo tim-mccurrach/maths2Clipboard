@@ -27,6 +27,7 @@
     "@testing-library/user-event": "^13.1.9",
     "copy-webpack-plugin": "^8",
     "css-loader": "^5.2.6",
+    "eslint": "^7.30.0",
     "exports-loader": "^2",
     "imports-loader": "^2",
     "jest": "^27.0.6",

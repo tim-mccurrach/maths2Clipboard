@@ -1,5 +1,5 @@
 import userEvent from "@testing-library/user-event";
-import { getByTestId, screen, fireEvent, waitFor } from "@testing-library/dom";
+import { screen, waitFor } from "@testing-library/dom";
 import {
 	copyMaths,
 	mathQuillConfig,
@@ -17,7 +17,7 @@ jest.mock("dom-to-image", () => ({
 	}),
 }));
 
-const renderMathsInput = (el) => {
+const renderMathsInput = () => {
 	document.body.innerHTML = `
 		<div id="mathsInput" data-testid="mathsInput">x^2+3</div>
 		<button id="copyButton" type="button">Copy Maths</button>
@@ -85,6 +85,7 @@ describe("Check copy to clipboard functionaliy", () => {
 	test("Check snap-shot", async () => {
 		renderMathsInput();
 		const copyButton = screen.getByText("Copy Maths");
+		const mathsInput = screen.getByTestId("mathsInput");
 		copyButton.addEventListener("click", () => {
 			copyMaths(mathsInput, 1);
 		});

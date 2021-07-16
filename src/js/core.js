@@ -1,3 +1,4 @@
+/* global ClipboardItem */
 import MathQuill from "exports-loader?exports=default|window.MathQuill!imports-loader?imports=jquery&additionalCode=window.jQuery=jquery!../../vendor/mathquill-0.10.1/mathquill.min.js";
 import domtoimage from "dom-to-image";
 import { autoCommands } from "./latexCommands";

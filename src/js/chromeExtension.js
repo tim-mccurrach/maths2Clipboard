@@ -1,3 +1,4 @@
+/* global chrome */
 import {
 	MQ,
 	mathQuillConfig,
@@ -68,7 +69,7 @@ chrome.storage.local.get({ mathsValue: "ax^2 + bx + c = 0" }, function (
 	// text block, so we add a keyup listener to pick this up. This means
 	// that we store the value to localStorage twice - this isn't ideal, but
 	// it's not the worst thing in the world either.
-	mathsInput.addEventListener("keyup", function (event) {
+	mathsInput.addEventListener("keyup", function () {
 		var newValue = sanitiseLatex(mathField.latex());
 		if (newValue) {
 			chrome.storage.local.set({ mathsValue: newValue });
