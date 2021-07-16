@@ -1,54 +1,54 @@
 // make space for header before anchors so that they are not hidden
 // beneath the header when scrolled into view.
 .anchor::before {
-	content: "";
-	display: block;
-	position: relative;
-	width: 0;
-	height: var(--header-height);
-	margin-top: calc(-1 * var(--header-height));
+    content: "";
+    display: block;
+    position: relative;
+    width: 0;
+    height: var(--header-height);
+    margin-top: calc(-1 * var(--header-height));
 }
 
 .fullPageSection {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
 }
 
 // TODO: replace this with 'dialog.some_class' since all of this is very specifically
 // about the menu we have
 dialog {
-	z-index: 0; // create new stacking context
-	color: black;
-	font-size: 1rem;
-	line-height: 1rem;
-	cursor: initial;
-	left: unset;
-	top: 4rem;
-	right: -2rem;
-	width: min(90vw, 30ch);
-	border-radius: 2rem;
+    z-index: 0; // create new stacking context
+    color: black;
+    font-size: 1rem;
+    line-height: 1rem;
+    cursor: initial;
+    left: unset;
+    top: 4rem;
+    right: -2rem;
+    width: min(90vw, 30ch);
+    border-radius: 2rem;
 
-	&::before {
-		content: "";
-		width: 0;
-		height: 0;
-		border-left: 1.5rem solid transparent;
-		border-right: 1.5rem solid transparent;
-		border-bottom: 2rem solid white;
-		position: absolute;
-		top: -2rem;
-		right: 2.2rem;
-	}
-	button {
-		background-color: var(--background-colour);
-		width: 10ch;
-		height: 3rem;
-		border-radius: 3rem;
-		&::before {
-			border-radius: calc(3rem + 3px);
-		}
-	}
+    &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 1.5rem solid transparent;
+        border-right: 1.5rem solid transparent;
+        border-bottom: 2rem solid white;
+        position: absolute;
+        top: -2rem;
+        right: 2.2rem;
+    }
+    button {
+        background-color: var(--background-colour);
+        width: 10ch;
+        height: 3rem;
+        border-radius: 3rem;
+        &::before {
+            border-radius: calc(3rem + 3px);
+        }
+    }
 }

@@ -1,157 +1,286 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
 
-		<title>Maths To Clipboard</title>
+        <title>Maths To Clipboard</title>
 
-		<meta name="description" content="Easily write maths and copy it to the clipboard">
-  		<meta name="keywords" content="Maths, MathQuill, Clipboard">
-  		<meta name="author" content="Tim McCurrach">
+        <meta
+            name="description"
+            content="Easily write maths and copy it to the clipboard"
+        />
+        <meta name="keywords" content="Maths, MathQuill, Clipboard" />
+        <meta name="author" content="Tim McCurrach" />
 
-		<meta property="og:title" content="Maths To Clipboard">
-		<meta property="og:description" content="Easily type maths, and then copy it as a picture to use wherever you want.">
-		<meta property="og:locale" content="en_GB">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://www.maths2clipboard.com">
+        <meta property="og:title" content="Maths To Clipboard" />
+        <meta
+            property="og:description"
+            content="Easily type maths, and then copy it as a picture to use wherever you want."
+        />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.maths2clipboard.com" />
 
-		<meta property="og:image" content="https://www.maths2clipboard.com/icon128.jpg">
-		<meta property="og:image:alt" content="Maths to clipboard logo">
-		<meta property="og:image:type" content="image/png" />
-		<meta property="og:image:width" content="128" />
-		<meta property="og:image:height" content="128" />
+        <meta
+            property="og:image"
+            content="https://www.maths2clipboard.com/icon128.jpg"
+        />
+        <meta property="og:image:alt" content="Maths to clipboard logo" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="128" />
+        <meta property="og:image:height" content="128" />
 
-		<link rel="icon" href="favicon.png" type="image/png">
-		<meta name="theme-color" content="#103264">
+        <link rel="icon" href="favicon.png" type="image/png" />
+        <meta name="theme-color" content="#103264" />
 
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" crossorigin="anonymous">
-		<link rel="stylesheet" href="mathquill.css" crossorigin="anonymous">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<svg width="0" height="0" style="display:block">
-			<defs>
-				<linearGradient id="gradient" x1="0" y1="500" x2="500" y2="0" gradientUnits="userSpaceOnUse">
-			        <stop offset="0%" stop-color="var(--gradient-col-1)" />
-					<stop offset="100%" stop-color="var(--gradient-col-2)" />
-      			</linearGradient>
-			</defs>
-		</svg>
-		<header>
-			<nav>
-				<a href="#top" class="homeLink">
-					<svg role="img" aria-labelledby="homeLinkTitle">
-						<title id="homeLinkTitle">Home</title>
-							<use href="icons/icons.svg#logo" />
-					</svg>	
-				</a>
-				<ul class="mainNavMenu">
-					<li><a href="#Instructions">Instructions</a></li>
-					<li><a href="#about">About</a></li>
-				</ul>
-				<span id="settingsButtonGroup" class="settingsButton">
-					<button id="settingsButton" title="settings">
-						<svg>
-							<use href="icons/icons.svg#cog" />
-						</svg>
-					</button>
-					<dialog tabIndex="0" id="settingsDialogue">
-						<form id="settingsForm" method="dialog">
-							<label>Set the zoom level for the copied image:</label><br>
-							<input name="scaleFactor" type="number" min="1" aria-describedby="scaleFactorHelpText"><br>
-							<small id="scaleFactorHelpText">A number twice as large, results in a picture twice as large</small>
-							<div class="buttonGroup">
-								<button type="submit" value="submit" class="button">OK</button>
-								<button value="close" class="button">Close</button>
-							</div>
-						</form>
-					</dialog>
-				</span>
-				<button id="burgerMenuButton" class="burgerMenuButton button closed">
-					<div></div>
-					<div></div>
-					<div></div>
-				</button>
-				<ul id="mobileNavMenu"class="mobileNavMenu">
-					<li><a href="#Instructions">Instructions</a></li>
-					<li><a href="#about">About</a></li>
-				</ul>
-			</nav>
-		</header>
-		<!-- Uncomment when Chrome extension is reviewed and published -->
-		<!--
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+            rel="stylesheet"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="mathquill.css" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <svg width="0" height="0" style="display: block;">
+            <defs>
+                <linearGradient
+                    id="gradient"
+                    x1="0"
+                    y1="500"
+                    x2="500"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0%" stop-color="var(--gradient-col-1)" />
+                    <stop offset="100%" stop-color="var(--gradient-col-2)" />
+                </linearGradient>
+            </defs>
+        </svg>
+        <header>
+            <nav>
+                <a href="#top" class="homeLink">
+                    <svg role="img" aria-labelledby="homeLinkTitle">
+                        <title id="homeLinkTitle">Home</title>
+                        <use href="icons/icons.svg#logo" />
+                    </svg>
+                </a>
+                <ul class="mainNavMenu">
+                    <li><a href="#Instructions">Instructions</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <span id="settingsButtonGroup" class="settingsButton">
+                    <button id="settingsButton" title="settings">
+                        <svg>
+                            <use href="icons/icons.svg#cog" />
+                        </svg>
+                    </button>
+                    <dialog tabindex="0" id="settingsDialogue">
+                        <form id="settingsForm" method="dialog">
+                            <label
+                                >Set the zoom level for the copied image:</label
+                            ><br />
+                            <input
+                                name="scaleFactor"
+                                type="number"
+                                min="1"
+                                aria-describedby="scaleFactorHelpText"
+                            /><br />
+                            <small id="scaleFactorHelpText"
+                                >A number twice as large, results in a picture
+                                twice as large</small
+                            >
+                            <div class="buttonGroup">
+                                <button
+                                    type="submit"
+                                    value="submit"
+                                    class="button"
+                                >
+                                    OK
+                                </button>
+                                <button value="close" class="button">
+                                    Close
+                                </button>
+                            </div>
+                        </form>
+                    </dialog>
+                </span>
+                <button
+                    id="burgerMenuButton"
+                    class="burgerMenuButton button closed"
+                >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <ul id="mobileNavMenu" class="mobileNavMenu">
+                    <li><a href="#Instructions">Instructions</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Uncomment when Chrome extension is reviewed and published -->
+        <!--
 		<aside class="chromeExtension">
 			<a href="#">
 				<img src="icons/ChromeIcon.png" alt="Chrome Logo" />
 				<span>Use maths2clipboard everywhere with the <br>Chrome Extension</span>
 			</a>
 		</aside>-->
-		<main>
-			<section class="fullPageSection">
-				<form class="mathsInputForm">
-					<label class="screenReaderOnly" for="mathsInputTextArea">Enter Maths:</label>
-					<div id="mathsInputWrapper" class="mathsInputWrapper">
-						<div id="mathsInputScroller" class="scrollWrapper">
-							<div id="mathsInput" class="mathsInput">ax^2 + bx + c = 0</div>
-						</div>
-					</div>
-					<div class="buttonGroup">
-						<button id="copyButton" class="copyButton button" type="button">
-							<svg width="1.5em" height="1.5em">
-								<use href="icons/icons.svg#clipboard" />
-							</svg>
-							Copy Maths
-						</button>
-						<div class="colorInputWrapper button">
-							<input id="colorInput" type="color" aria-label="Set Colour"/>
-							<svg>
-								<use href="icons/icons.svg#pencil"/>
-							</svg>
+        <main>
+            <section class="fullPageSection">
+                <form class="mathsInputForm">
+                    <label class="screenReaderOnly" for="mathsInputTextArea"
+                        >Enter Maths:</label
+                    >
+                    <div id="mathsInputWrapper" class="mathsInputWrapper">
+                        <div id="mathsInputScroller" class="scrollWrapper">
+                            <div id="mathsInput" class="mathsInput">
+                                ax^2 + bx + c = 0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonGroup">
+                        <button
+                            id="copyButton"
+                            class="copyButton button"
+                            type="button"
+                        >
+                            <svg width="1.5em" height="1.5em">
+                                <use href="icons/icons.svg#clipboard" />
+                            </svg>
+                            Copy Maths
+                        </button>
+                        <div class="colorInputWrapper button">
+                            <input
+                                id="colorInput"
+                                type="color"
+                                aria-label="Set Colour"
+                            />
+                            <svg>
+                                <use href="icons/icons.svg#pencil" />
+                            </svg>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="Instructions" class="anchor text">
+                <h2>Instructions</h2>
+                <p>
+                    maths2Clipboard should just write the way you expect. We
+                    hope you don't need to read these instructions, but should
+                    you get stuck here are some pointers:
+                </p>
+                <ul>
+                    <li>
+                        To write powers, simply use the circumflex symbol
+                        (<kbd>^</kbd>). For example to write
+                        <span class="staticMath">x^2</span> simply type
+                        <kbd>x</kbd><kbd>^</kbd><kbd>2</kbd>
+                    </li>
 
-						</div>
-					</div>
-				</form>
-			</section>
-			<section id="Instructions" class="anchor text">
-				<h2>Instructions</h2>
-				<p>maths2Clipboard should just write the way you expect. We hope you don't need to read these instructions, but should you get stuck here are some pointers:</p>
-				<ul>
-					<li>To write powers, simply use the circumflex symbol (<kbd>^</kbd>). For example to write <span class="staticMath">x^2</span> simply type <kbd>x</kbd><kbd>^</kbd><kbd>2</kbd>
-					</li>
+                    <li>
+                        Likewise, to write subscript simply use an underscore
+                        (<kbd>_</kbd>). To write
+                        <span class="staticMath">x_2</span>, simply type
+                        <kbd>x</kbd><kbd>_</kbd><kbd>2</kbd>
+                    </li>
+                    <li>
+                        Fractions are as simple as typing a forward slash. For
+                        example to write
+                        <span class="staticMath">\frac{1}{x+1}</span> simply
+                        type <kbd>1</kbd><kbd>/</kbd><kbd>x</kbd><kbd>+</kbd
+                        ><kbd>1</kbd>. If you have already written several
+                        terms, and would like to make them a numerator you can
+                        do one of two things:
+                        <ul>
+                            <li>
+                                Highlight them with a mouse and then type
+                                <kbd>/</kbd> followed by your denominator
+                            </li>
+                            <li>
+                                Surround the relevant terms with parantheses,
+                                and then type
+                                <kbd>/</kbd> to produce a fraction
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        An asterix (<kbd>*</kbd>) will produce a times symbol
+                        (<span class="staticMath">\times</span>).
+                    </li>
+                    <li>
+                        To type greek letters just write out the letters in
+                        english e.g. for
+                        <span class="staticMath">\phi</span> just write 'phi'.
+                        To get a capital version of a greek letter write the
+                        english version with a capital letter e.g to get capital
+                        phi (<span class="staticMath">\Phi</span>), just type
+                        'Phi'.
+                    </li>
+                    <li>
+                        To type normal non-italicised text, press
+                        <kbd>$</kbd> to switch to text mode. Press
+                        <kbd>$</kbd> again to switch back.
+                    </li>
+                    <li>
+                        All of the standard
+                        <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>,
+                        symbols can be added by simply writing a '\' followed by
+                        the relevant command. If unsure, refer to
+                        <a
+                            href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols"
+                            >a full list of Latex symbols</a
+                        >.
+                    </li>
+                </ul>
+            </section>
+            <section id="about" class="anchor text">
+                <h2>About</h2>
+                <p>
+                    Entering mathematical expressions on most online platforms
+                    requires navigating a slow, clunky, and un-intuitive
+                    interface. It needn't be this way. It is quite simple to
+                    type maths in a natural fashion; the same way you most
+                    likely think about maths. No need for endless clicking, for
+                    learning
+                    <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>, or
+                    for awkward interfaces.
+                </p>
 
-					<li>Likewise, to write subscript simply use an underscore (<kbd>_</kbd>). To write <span class="staticMath">x_2</span>, simply type <kbd>x</kbd><kbd>_</kbd><kbd>2</kbd></li>
-					<li>Fractions are as simple as typing a forward slash. For example to write <span class="staticMath">\frac{1}{x+1}</span> simply type <kbd>1</kbd><kbd>/</kbd><kbd>x</kbd><kbd>+</kbd><kbd>1</kbd>. If you have already written several terms, and would like to make them a numerator you can do one of two things:
-						<ul>
-							<li>Highlight them with a mouse and then type <kbd>/</kbd> followed by your denominator</li>
-							<li>Surround the relevant terms with parantheses, and then type <kbd>/</kbd> to produce a fraction</li>
-						</ul>
-					</li>
-				<li>An asterix (<kbd>*</kbd>) will produce a times symbol (<span class="staticMath">\times</span>).</li>
-				<li>To type greek letters just write out the letters in english e.g. for <span class="staticMath">\phi</span> just write 'phi'. To get a capital version of a greek letter write the english version with a capital letter e.g to get capital phi (<span class="staticMath">\Phi</span>), just type 'Phi'.</li>
-				<li>To type normal non-italicised text, press <kbd>$</kbd> to switch to text mode. Press <kbd>$</kbd> again to switch back.</li>
-				<li>
-					All of the standard <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>, symbols can be added by simply writing a '\' followed by the relevant command. If unsure, refer to  <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">a full list of Latex symbols</a>.
-				</li>
-			</ul>
-			</section>
-			<section id="about" class="anchor text">
-				<h2>About</h2>
-				<p>Entering mathematical expressions on most online platforms requires navigating a slow, clunky, and un-intuitive interface. It needn't be this way. It is quite simple to type maths in a natural fashion; the same way you most likely think about maths. No need for endless clicking, for learning <span class="latex">L<sup>A</sup>T<sub>E</sub>X</span>, or for awkward interfaces.</p>
-
-				<!-- Uncomment when Chrome extension is reviewed and published -->
-				<!--<p>The main point of this site is to advertise <a href="#">the chrome extension</a> so that not matter what site you are using, you can easily insert maths.
+                <!-- Uncomment when Chrome extension is reviewed and published -->
+                <!--<p>The main point of this site is to advertise <a href="#">the chrome extension</a> so that not matter what site you are using, you can easily insert maths.
 				</p> -->
-				<p>Under the hood, maths2Clipoard uses the excellent <a href="http://mathquill.com/">mathQuill library</a> to make writing maths in the browser easy. It then uses <a href="https://github.com/tsayen/dom-to-image">dom-to-image</a> to render the resulting mark-up to png, and copies that to the clipboard. If there are any problems with the site or the extension, please <a href="https://github.com/tim-mccurrach/maths2Clipboard/issues">raise an issue at the github repo</a>.</p>
-			</section>
-		</main>
-		<footer class="text">
-			<div class="footerContent">
-				<span>&copy 2021 - Tim McCurrach</span>
-				<a class="alignRight" href="https://github.com/tim-mccurrach/maths2Clipboard" title="Link to maths to clipboard github page">Github</a>
-			</div>
-		</footer>
-		<script src="main.js"></script>
-	</body>
+                <p>
+                    Under the hood, maths2Clipoard uses the excellent
+                    <a href="http://mathquill.com/">mathQuill library</a> to
+                    make writing maths in the browser easy. It then uses
+                    <a href="https://github.com/tsayen/dom-to-image"
+                        >dom-to-image</a
+                    >
+                    to render the resulting mark-up to png, and copies that to
+                    the clipboard. If there are any problems with the site or
+                    the extension, please
+                    <a
+                        href="https://github.com/tim-mccurrach/maths2Clipboard/issues"
+                        >raise an issue at the github repo</a
+                    >.
+                </p>
+            </section>
+        </main>
+        <footer class="text">
+            <div class="footerContent">
+                <span>&copy 2021 - Tim McCurrach</span>
+                <a
+                    class="alignRight"
+                    href="https://github.com/tim-mccurrach/maths2Clipboard"
+                    title="Link to maths to clipboard github page"
+                    >Github</a
+                >
+            </div>
+        </footer>
+        <script src="main.js"></script>
+    </body>
 </html>

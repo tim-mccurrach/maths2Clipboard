@@ -1,103 +1,103 @@
 @import "../mixins";
 
 html {
-	scroll-behavior: smooth;
-	overflow-x: hidden;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 main {
-	max-width: 70ch;
-	margin: 0 auto;
+    max-width: 70ch;
+    margin: 0 auto;
 }
 
 body {
-	padding-top: var(--header-height);
-	background-color: var(--background-colour);
-	overflow-x: hidden;
-	color: var(--foreground-colour);
+    padding-top: var(--header-height);
+    background-color: var(--background-colour);
+    overflow-x: hidden;
+    color: var(--foreground-colour);
 }
 
 .mathsInputForm {
-	width: 100%;
-	min-width: fit-content;
-	position: relative;
-	&::before,
-	&::after {
-		content: "";
-		position: absolute;
-		top: -4ch; // half height of submit button
-		height: 100%;
-		width: calc(100% + 10ch);
-		left: -6ch; // purposfully slightly unsymetrical
-		border-radius: 40px;
-	}
-	&::before {
-		background-image: linear-gradient(
-			45deg,
-			var(--gradient-col-1),
-			var(--gradient-col-2)
-		);
-		transform: rotate(-2.5deg) skewX(-10deg);
-		z-index: -10;
-	}
-	&::after {
-		background-color: var(--background-color-shadow);
-		transform: rotate(-1deg);
-		z-index: -20;
-	}
+    width: 100%;
+    min-width: fit-content;
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: -4ch; // half height of submit button
+        height: 100%;
+        width: calc(100% + 10ch);
+        left: -6ch; // purposfully slightly unsymetrical
+        border-radius: 40px;
+    }
+    &::before {
+        background-image: linear-gradient(
+            45deg,
+            var(--gradient-col-1),
+            var(--gradient-col-2)
+        );
+        transform: rotate(-2.5deg) skewX(-10deg);
+        z-index: -10;
+    }
+    &::after {
+        background-color: var(--background-color-shadow);
+        transform: rotate(-1deg);
+        z-index: -20;
+    }
 }
 
 .copyButton {
-	font-size: 1em;
-	height: 6ch;
-	width: 26ch;
-	border-radius: 4ch;
-	&::before {
-		border-radius: 4ch;
-	}
-	svg {
-		vertical-align: -0.25em;
-	}
+    font-size: 1em;
+    height: 6ch;
+    width: 26ch;
+    border-radius: 4ch;
+    &::before {
+        border-radius: 4ch;
+    }
+    svg {
+        vertical-align: -0.25em;
+    }
 }
 
 .chromeExtension {
-	background-color: white;
-	padding: 20px;
-	border-radius: 30px;
-	img {
-		vertical-align: -1.5em;
-		height: 3em;
-		width: 3em;
-		float: left;
-	}
-	/*temporary hack*/
-	a {
-		color: black;
-	}
-	display: inline-flex;
-	position: absolute;
-	right: 15%;
-	margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    img {
+        vertical-align: -1.5em;
+        height: 3em;
+        width: 3em;
+        float: left;
+    }
+    /*temporary hack*/
+    a {
+        color: black;
+    }
+    display: inline-flex;
+    position: absolute;
+    right: 15%;
+    margin-top: 30px;
 }
 
 footer {
-	background: white;
-	color: black;
-	padding: var(--spacer-1);
-	a {
-		color: black;
-	}
+    background: white;
+    color: black;
+    padding: var(--spacer-1);
+    a {
+        color: black;
+    }
 }
 
 .footerContent {
-	display: flex;
-	align-items: center;
-	max-width: 70ch;
-	margin: auto;
+    display: flex;
+    align-items: center;
+    max-width: 70ch;
+    margin: auto;
 }

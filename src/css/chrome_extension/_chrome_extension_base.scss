@@ -1,25 +1,25 @@
 body {
-	padding: var(--spacer-0);
-	background-color: var(--background-colour);
+    padding: var(--spacer-0);
+    background-color: var(--background-colour);
 }
 
 .mathsInputWrapper {
-	// overwrite 100vw. Chrome Popup extension doesn't have the concept
-	// of 'vw'.
-	max-width: initial;
+    // overwrite 100vw. Chrome Popup extension doesn't have the concept
+    // of 'vw'.
+    max-width: initial;
 }
 .buttonGroup {
-	// on the main site we do want these buttons to split onto separate rows
-	// but not for the extension.
-	min-width: max-content;
+    // on the main site we do want these buttons to split onto separate rows
+    // but not for the extension.
+    min-width: max-content;
 }
 
 .copyButton {
-	height: 6ch;
-	padding-left: 6ch;
-	padding-right: 6ch;
-	border-radius: 6ch;
-	&::before {
-		border-radius: 6ch;
-	}
+    height: 6ch;
+    padding-left: 6ch;
+    padding-right: 6ch;
+    border-radius: 6ch;
+    &::before {
+        border-radius: 6ch;
+    }
 }

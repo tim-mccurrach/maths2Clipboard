@@ -11,32 +11,32 @@
  *	 - ::before border-radius
  */
 @mixin gradientBorder($condition, $width) {
-	background-clip: padding-box;
-	border: $width solid transparent;
-	position: relative;
-	&::before {
-		content: "";
-		position: absolute;
-		top: -$width;
-		left: -$width;
-		height: 100%;
-		width: 100%;
-		z-index: -2;
+    background-clip: padding-box;
+    border: $width solid transparent;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -$width;
+        left: -$width;
+        height: 100%;
+        width: 100%;
+        z-index: -2;
 
-		background-clip: border-box;
-		border: $width solid transparent;
-		background: var(--foreground-colour);
-	}
-	#{$condition} {
-		&::before {
-			background: linear-gradient(
-				45deg,
-				var(--gradient-col-2),
-				var(--gradient-col-1)
-			);
-			background-position: -#{$width} -#{$width};
-			background-size: calc(100% + 2 * #{$width})
-				calc(100% + 2 * #{$width});
-		}
-	}
+        background-clip: border-box;
+        border: $width solid transparent;
+        background: var(--foreground-colour);
+    }
+    #{$condition} {
+        &::before {
+            background: linear-gradient(
+                45deg,
+                var(--gradient-col-2),
+                var(--gradient-col-1)
+            );
+            background-position: -#{$width} -#{$width};
+            background-size: calc(100% + 2 * #{$width})
+                calc(100% + 2 * #{$width});
+        }
+    }
 }

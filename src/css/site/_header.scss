@@ -1,163 +1,163 @@
 header {
-	position: fixed;
-	background-color: var(--background-colour);
-	z-index: 100;
-	top: 0;
-	width: 100%;
-	font: var(--default-font);
-	color: var(--foreground-colour);
-	padding-bottom: var(--spacer-gutter);
-	padding-top: var(--spacer-gutter);
-	box-shadow: 1px 10px 6px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    background-color: var(--background-colour);
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    font: var(--default-font);
+    color: var(--foreground-colour);
+    padding-bottom: var(--spacer-gutter);
+    padding-top: var(--spacer-gutter);
+    box-shadow: 1px 10px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 nav {
-	max-width: max(70ch, 60%);
-	padding-left: 2rem;
-	padding-right: 2rem;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	> * + * {
-		margin-left: var(--spacer-gutter);
-	}
+    max-width: max(70ch, 60%);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    > * + * {
+        margin-left: var(--spacer-gutter);
+    }
 
-	ul {
-		list-style-type: none;
-		padding-inline-start: 0; // override user-agent indent for unordered-lists
-		display: flex;
-		font-size: 2rem;
-		margin-top: 0;
-		margin-bottom: 0;
-		flex-grow: 1;
-	}
+    ul {
+        list-style-type: none;
+        padding-inline-start: 0; // override user-agent indent for unordered-lists
+        display: flex;
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
 
-	li {
-		height: 3rem;
-		line-height: 3rem;
-		cursor: pointer;
-		+ li {
-			margin-left: var(--spacer-gutter);
-		}
-		&:hover,
-		&:focus-within {
-			> a {
-				background: linear-gradient(
-					45deg,
-					var(--gradient-col-1),
-					var(--gradient-col-2)
-				);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-		}
-	}
+    li {
+        height: 3rem;
+        line-height: 3rem;
+        cursor: pointer;
+        + li {
+            margin-left: var(--spacer-gutter);
+        }
+        &:hover,
+        &:focus-within {
+            > a {
+                background: linear-gradient(
+                    45deg,
+                    var(--gradient-col-1),
+                    var(--gradient-col-2)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
 
-	* {
-		svg {
-			fill: var(--foreground-colour);
-			width: 100%;
-			height: 100%;
-		}
-		&:hover,
-		&:focus-within {
-			svg {
-				fill: url(#gradient);
-			}
-		}
-	}
+    * {
+        svg {
+            fill: var(--foreground-colour);
+            width: 100%;
+            height: 100%;
+        }
+        &:hover,
+        &:focus-within {
+            svg {
+                fill: url(#gradient);
+            }
+        }
+    }
 }
 
 .settingsButton {
-	position: relative;
-	& > button {
-		background: none;
-		border: none;
-		height: 3rem;
-		width: 3rem;
-		& > svg {
-			//align cog so it actually looks centered
-			font-size: 0.75rem;
-			vertical-align: -0.75rem;
-		}
-	}
+    position: relative;
+    & > button {
+        background: none;
+        border: none;
+        height: 3rem;
+        width: 3rem;
+        & > svg {
+            //align cog so it actually looks centered
+            font-size: 0.75rem;
+            vertical-align: -0.75rem;
+        }
+    }
 }
 
 .homeLink {
-	// TODO: Better name
-	display: inline-block;
-	height: 3rem;
-	width: 3rem;
-	min-width: 3rem; // to stop it collapsing due to flex-grow
+    // TODO: Better name
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem; // to stop it collapsing due to flex-grow
 }
 
 .burgerMenuButton {
-	height: 3rem;
-	width: 3rem;
-	display: none;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	border-radius: 0.333rem;
-	padding: 0; // so that burger calculations are simple
-	&::before {
-		border-radius: 0.333rem;
-	}
-	&:hover div,
-	&:focus div {
-		background: linear-gradient(
-			45deg,
-			var(--gradient-col-1),
-			var(--gradient-col-2)
-		);
-	}
-	div {
-		height: 3px;
-		width: calc((3rem - 6px) - (3rem - 15px) * 0.5);
-		background-color: var(--foreground-colour);
-		transition: all 0.3s linear;
-		transform-origin: center center;
-	}
-	&.open {
-		div {
-			width: calc(((3rem - 6px) - (3rem - 15px) * 0.5) * 1.414);
-		}
-		:first-child {
-			transform: translateY(calc(0.25 * (3rem - 15px) + 3px))
-				rotate(45deg);
-		}
-		:nth-child(2) {
-			opacity: 0;
-		}
-		:nth-child(3) {
-			transform: translateY(calc(-0.25 * (3rem - 15px) - 3px))
-				rotate(-45deg);
-		}
-		+ .mobileNavMenu {
-			position: absolute;
-			display: block;
-			right: 0;
-			top: var(--header-height);
-		}
-	}
+    height: 3rem;
+    width: 3rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0.333rem;
+    padding: 0; // so that burger calculations are simple
+    &::before {
+        border-radius: 0.333rem;
+    }
+    &:hover div,
+    &:focus div {
+        background: linear-gradient(
+            45deg,
+            var(--gradient-col-1),
+            var(--gradient-col-2)
+        );
+    }
+    div {
+        height: 3px;
+        width: calc((3rem - 6px) - (3rem - 15px) * 0.5);
+        background-color: var(--foreground-colour);
+        transition: all 0.3s linear;
+        transform-origin: center center;
+    }
+    &.open {
+        div {
+            width: calc(((3rem - 6px) - (3rem - 15px) * 0.5) * 1.414);
+        }
+        :first-child {
+            transform: translateY(calc(0.25 * (3rem - 15px) + 3px))
+                rotate(45deg);
+        }
+        :nth-child(2) {
+            opacity: 0;
+        }
+        :nth-child(3) {
+            transform: translateY(calc(-0.25 * (3rem - 15px) - 3px))
+                rotate(-45deg);
+        }
+        + .mobileNavMenu {
+            position: absolute;
+            display: block;
+            right: 0;
+            top: var(--header-height);
+        }
+    }
 }
 
 .mobileNavMenu {
-	display: none;
+    display: none;
 }
 
 @media (max-width: 60ch) {
-	.burgerMenuButton {
-		display: flex;
-	}
-	.mainNavMenu {
-		display: none;
-	}
-	.homeLink {
-		flex-grow: 1;
-		svg {
-			width: inherit;
-			height: inherit;
-		}
-	}
+    .burgerMenuButton {
+        display: flex;
+    }
+    .mainNavMenu {
+        display: none;
+    }
+    .homeLink {
+        flex-grow: 1;
+        svg {
+            width: inherit;
+            height: inherit;
+        }
+    }
 }
