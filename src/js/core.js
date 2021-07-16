@@ -16,6 +16,7 @@ export const mathQuillConfig = {
 		textArea.setAttribute("spellcheck", false);
 		textArea.setAttribute("x-palm-disable-ste-all", true);
 		textArea.setAttribute("id", "mathsInputTextArea");
+		textArea.setAttribute("data-testid", "mathsInputTextArea");
 		return textArea;
 	},
 };
@@ -67,15 +68,11 @@ export const copyMaths = function (node, scaleFactor = 1) {
 	})
 		.then(function (dataUrl) {
 			const imgBlob = dataURItoBlob(dataUrl);
-			try {
-				navigator.clipboard.write([
-					new ClipboardItem({
-						"image/png": imgBlob,
-					}),
-				]);
-			} catch (error) {
-				console.error(error);
-			}
+			navigator.clipboard.write([
+				new ClipboardItem({
+					"image/png": imgBlob,
+				}),
+			]);
 		})
 		.catch(function (error) {
 			console.error("oops, something went wrong!", error);
